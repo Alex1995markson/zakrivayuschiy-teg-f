@@ -1,20 +1,9 @@
-/* Здесь вы напишете основную часть стилей страницы.
 
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-
-*/
 
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-size: var(--font-size);
-  /* have a supports? */
 }
 
 .header {
@@ -30,7 +19,6 @@
   justify-content: center;
   background: var(--bg-color);
   margin: 100px auto;
-  /* need to clamp? */
 }
 
 .header__main-title {
@@ -39,14 +27,11 @@
   font-size: clamp(3.5rem, 0.5625rem + 6.4531vw, 3.8125rem);
   letter-spacing: 0.25rem;
   color: var(--text-color);
-  /* was 65px; rem - будет вычислен от 16px потому что он нигде не задан выше  */
   line-height: clamp(3.5rem, 0.5625rem + 6.4531vw, 3.8125rem);
-  /* 65px; */
 }
 
 .header__main-description {
   padding-block-start: 1.25rem;
-  /* need to clamp? */
   color: var(--text-color);
   text-align: center;
   font-weight: var(--font-weight-normal);
@@ -60,12 +45,10 @@
 main {
   font-family: var(--main-font), sans-serif;
   font-variation-settings: "wght" var(--main-font-weight);
-
 }
 
 .content__section_card {
   background-color: var(--bg-color);
-  /* display: block; */
   width: clamp(var(--logo-min-width), var(--logo-preferred-width), var(--logo-max-width));
   margin: auto;
   margin-block-end: 50px;
@@ -373,7 +356,7 @@ main {
 }
 
 .blur {
-  filter:s blur(0.2rem);
+  filter: blur(0.2rem);
 }
 
 .opacity-and-blur {
