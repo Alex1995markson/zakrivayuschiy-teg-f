@@ -118,17 +118,15 @@ main {
   margin-block-end: 1.5rem;
 }
 
-
-/* dialog & button new! */
-
 .button {
   border: 2px var(--text-color) solid;
   font-family: var(--accent-font), sans-serif;
   font-size: 0.875rem;
-  transition: box-shadow 0.3s ease; 
   position: relative;
   cursor: pointer;
   background-color: var(--bg-color);
+
+  transition: box-shadow 0.3s ease; 
 }
 
 .button::after {
@@ -213,9 +211,6 @@ main {
   transition: fill 0.3s linear 0.03s;
 }
 
-/* decoration elements  */
-/* dialog & buttons */
-
 .button-save {
   display:  block; 
   margin: 50px auto 100px;
@@ -230,7 +225,6 @@ main {
 }
 
 .button-save__content svg {
-  /* inline-size: 28px; */
   block-size: 28px;
   fill: var(--bg-color);
 }
