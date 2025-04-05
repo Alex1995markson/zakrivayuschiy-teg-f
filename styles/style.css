@@ -145,7 +145,8 @@ main {
   color: var(--bg-color);
 }
 
-.button:focus {
+.button:focus
+{
   outline: none; 
 }
 
