@@ -13,4 +13,445 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-size: var(--font-size);
+  /* have a supports? */
+}
+
+.header {
+  width: clamp(var(--section-min-width), var(--section-preferred-width), var(--section-max-width));
+}
+
+.header__main {
+  width: clamp(var(--logo-min-width), var(--logo-preferred-width), var(--logo-max-width));
+  min-height: 366px;
+  font-family: var(--accent-font), monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--bg-color);
+  margin: 100px auto;
+  /* need to clamp? */
+}
+
+.header__main-title {
+  text-align: center;
+  font-weight: var(--font-weight-normal);
+  font-size: clamp(3.5rem, 0.5625rem + 6.4531vw, 3.8125rem);
+  letter-spacing: 0.25rem;
+  color: var(--text-color);
+  /* was 65px; rem - будет вычислен от 16px потому что он нигде не задан выше  */
+  line-height: clamp(3.5rem, 0.5625rem + 6.4531vw, 3.8125rem);
+  /* 65px; */
+}
+
+.header__main-description {
+  padding-block-start: 1.25rem;
+  /* need to clamp? */
+  color: var(--text-color);
+  text-align: center;
+  font-weight: var(--font-weight-normal);
+  font-size: clamp(1.0rem, 0.5625rem + 2.4531vw, 1.4125rem);
+  line-height: clamp(1.0rem, 0.5625rem + 2.4531vw, 1.4125rem);
+  text-transform: uppercase;
+}
+
+/* main with sections */
+
+main {
+  font-family: var(--main-font), sans-serif;
+  font-variation-settings: "wght" var(--main-font-weight);
+
+}
+
+.content__section_card {
+  background-color: var(--bg-color);
+  /* display: block; */
+  width: clamp(var(--logo-min-width), var(--logo-preferred-width), var(--logo-max-width));
+  margin: auto;
+  margin-block-end: 50px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card__header {
+  font-weight: var(--font-weight-bold);
+  font-size: 1.125rem;
+  line-height: 1.4rem;
+  margin-inline-start: 0.625rem;
+  margin-block-start: 0.3125rem;
+  margin-block-end: 0.3125rem;
+}
+
+.card__image-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.card__image {
+  display: block;
+  width: clamp(var(--logo-min-width), var(--logo-preferred-width), var(--logo-max-width));
+  height: auto;
+}
+
+.card__label {
+  position: absolute;
+  top: 28px;
+  right: 26px;
+  mix-blend-mode: hard-light;
+
+  font-family: var(--accent-font), monospace;
+  font-weight: var(--font-weight-normal);
+  font-size: 0.875rem;
+  line-height: 100%;
+  /* text-transform: uppercase; */
+  opacity: 0.5;
+  text-shadow:
+    -1px 0 var(--text-stroke-color),
+    0 1px var(--text-stroke-color),
+    1px 0 var(--text-stroke-color),
+    0 -1px var(--text-stroke-color);
+}
+
+
+.card__content {
+  font-family: var(--main-font);
+  font-weight: var(--font-weight-normal);
+  font-size: 1.125rem;
+  line-height: 21px;
+  margin-inline-start: 1.625rem;
+  margin-inline-end: 1.625rem;
+
+}
+
+.card__content-text {
+  margin-block-start: 1.5625rem;
+  margin-block-end: 1.6875rem;
+}
+
+.card__paragraph:first-child {
+  margin-block-end: 1.5rem;
+}
+
+
+/* dialog & button new! */
+
+.button {
+  border: 2px var(--text-color) solid;
+  font-family: var(--accent-font), sans-serif;
+  font-size: 0.875rem;
+  transition: box-shadow 0.3s ease; 
+  position: relative;
+  cursor: pointer;
+  background-color: var(--bg-color);
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  scale: 0 1;
+  background-color: var(--text-color);
+  transition: scale 0.5s ease-in-out;
+  transform-origin: left;
+  z-index: 0;
+}
+
+.button:focus {
+  outline: none; /* Убираем стандартный контур */
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px var(--text-color); /* Показываем контур только при клавиатурном фокусе */
+}
+
+.button:hover::after {
+  scale: 1 1;
+}
+
+.button__text {
+  position: relative;
+  z-index: 1;
+  mix-blend-mode: difference;
+  color: var(--bg-color);
+}
+
+.card__content-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px;
+  margin-block-end: 23px;
+}
+
+.card__icon-button {
+  justify-self: end;
+  background-color: transparent;
+  cursor: pointer;
+  border: 2px transparent solid;
+  block-size: 38px;
+  padding: 0;
+  transition: border-color 0.3s ease;
+}
+
+.card__like-button {
+  min-block-size: 38px;
+  min-inline-size: 130px;
+  text-transform: capitalize;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--text-color);
+}
+
+/* setting to svg heart */
+
+.contour {
+  fill: var(--heart-contour-color);
+  transition: fill 0.1s linear;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.main-body {
+  fill: transparent;
+  transition: fill 0.3s linear 0s;
+}
+
+.core {
+  fill: transparent;
+  transition: fill 0.3s linear 0.03s;
+}
+
+/* decoration elements  */
+/* dialog & buttons */
+
+.button-save {
+  display:  block; 
+  margin: 50px auto 100px;
+  padding: 12px 17px;
+}
+
+.button-save__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.button-save__content svg {
+  /* inline-size: 28px; */
+  block-size: 28px;
+  fill: var(--bg-color);
+}
+
+/* dialog */
+
+.dialog__save {
+  inline-size: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
+  flex-direction: column;
+  gap: 30px;
+  padding: 1.875rem;
+  border: 2px var(--text-color) solid;
+}
+
+.dialog__save[open] {
+  display: flex;
+}
+
+.dialog__save::backdrop {
+  background-color: var(--text-color);
+  opacity: 0.75;
+}
+
+.dialog__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.dialog__content-svg-wrapper {
+  inline-size: 39px;
+}
+
+.dialog__content-svg {
+  inline-size: 39px;
+  align-self: center;
+  fill: var(--text-color);
+}
+
+.dialog__content-text {
+  font-family: var(--accent-font), sans-serif;
+  font-size: 0.875rem;
+  line-height: 150%;
+  text-transform: uppercase;
+  display: block;
+}
+
+.dialog__button {
+  inline-size: 100%;
+  padding: 0.785rem;
+  text-transform: uppercase;
+}
+
+
+/* media and etc... */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .like-icon.is-liked .sparks,
+  .like-icon.is-liked .heart {
+    animation: none;
+  }
+
+}
+
+/* class wrapper */
+
+.border {
+  border: 2px solid var(--text-color);
+  overflow: hidden;
+}
+
+.last_letter {
+  text-transform: none;
+}
+
+/* background */
+
+.halftone::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  height: 100%;
+
+  background-image:
+    linear-gradient(rgba(231, 231, 231, 0), rgba(26, 26, 26, 0.7)),
+    conic-gradient(#212121 25%, transparent 25% 50%, #fafafa 50% 75%, transparent 75%);
+
+  background-size: 100% 100%, var(--bgSize) var(--bgSize);
+}
+
+.halftone::after {
+  mask-image: linear-gradient(to top, rgb(0 0 0), rgb(0 0 0 / 0));
+}
+
+/* media запрос для моб */
+@media (max-width: 375px) {
+  section {
+    width: 100%;
+    /* Переопределяем ширину на мобильных */
+  }
+}
+
+/* style for images */
+
+.blur-and-sepia {
+  filter: blur(0.2rem) sepia(80%);
+}
+
+.opacity-and-grayscale {
+  filter: opacity(0.2) grayscale(1);
+}
+
+.blur {
+  filter:s blur(0.2rem);
+}
+
+.opacity-and-blur {
+  filter: opacity(0.3) blur(0.2rem);
+}
+
+.sepia {
+  filter: grayscale(100%) sepia(50%) brightness(90%) contrast(110%);
+}
+
+.brightness-and-grayscale {
+  filter: brightness(8) grayscale(1);
+}
+
+.invert-and-saturate {
+  filter: invert(0.8) saturate(160%);
+}
+
+.hue-rotate-and-invert {
+  filter: hue-rotate(10deg) invert(0.8);
+}
+
+.saturate {
+  filter: saturate(160%);
+}
+
+/* animantions svg */
+
+.like-icon:hover .core {
+  fill: var(--heart-contour-color);
+  transition: fill 0.3s linear 0s;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--heart-contour-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon:active .core {
+  fill: var(--heart-main-color);
+  transition: fill 0.3s linear 0s;
+}
+
+.like-icon:active .main-body {
+  fill: var(--heart-main-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .core {
+  transition: fill 0.3s linear 0s;
+  fill: var(--heart-main-color);
+}
+
+.like-icon.is-liked .main-body {
+  transition: fill 0.3s linear 0.05s;
+  fill: var(--heart-main-color);
+}
+
+.like-icon.is-liked .heart {
+  transform-origin: center;
+  animation: like-scale-up 0.3s ease-in 0.1s 1;
+}
+
+.like-icon.is-liked .contour {
+  transition: fill 0.3s linear 0.06s;
+  fill: var(--heart-main-color);
+  transform-origin: center;
+}
+
+
+.like-icon.is-liked .sparks {
+  animation: sparks-fade-in 0.3s ease-in 0.3s 1;
+}
+
+/* supports */
+
+/* поддержка вариативного шрифта */
+/* @supports (font-variation-settings: normal) {
+  .page {
+    font-family: var(--main-font), sans-serif;
+    font-variation-settings: 'wght' var(--font-weight-bold), 'wdth' 100, 'opsz' 0;
+  }
+} почему-то не работает */
+
+@supports (-webkit-text-stroke: 1px var(--text-stroke-color)) {
+  .card__label {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+  }
 }
