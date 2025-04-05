@@ -89,7 +89,6 @@ main {
   font-weight: var(--font-weight-normal);
   font-size: 0.875rem;
   line-height: 100%;
-  /* text-transform: uppercase; */
   opacity: 0.5;
   text-shadow:
     -1px 0 var(--text-stroke-color),
@@ -106,16 +105,6 @@ main {
   line-height: 21px;
   margin-inline-start: 1.625rem;
   margin-inline-end: 1.625rem;
-
-}
-
-.card__content-text {
-  margin-block-start: 1.5625rem;
-  margin-block-end: 1.6875rem;
-}
-
-.card__paragraph:first-child {
-  margin-block-end: 1.5rem;
 }
 
 .button {
@@ -126,6 +115,15 @@ main {
   cursor: pointer;
   background-color: var(--bg-color);
   transition: box-shadow 0.3s ease; 
+}
+
+.card__content-text {
+  margin-block-start: 1.5625rem;
+  margin-block-end: 1.6875rem;
+}
+
+.card__paragraph:first-child {
+  margin-block-end: 1.5rem;
 }
 
 .button::after {
@@ -139,14 +137,6 @@ main {
   z-index: 0;
 }
 
-.button:focus {
-  outline: none; 
-}
-
-.button:focus-visible {
-  box-shadow: 2px 2px var(--text-color); /* Показываем контур только при клавиатурном фокусе */
-}
-
 .button:hover::after {
   scale: 1 1;
 }
@@ -156,6 +146,14 @@ main {
   z-index: 1;
   mix-blend-mode: difference;
   color: var(--bg-color);
+}
+
+.button:focus {
+  outline: none; 
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px var(--text-color);
 }
 
 .card__content-buttons {
@@ -278,7 +276,6 @@ main {
   text-transform: uppercase;
 }
 
-
 /* media and etc... */
 
 @media (prefers-reduced-motion: reduce) {
@@ -303,20 +300,6 @@ main {
 
 /* background */
 
-/* .halftone::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  height: 100%;
-
-  background-image:
-    linear-gradient(rgba(231, 231, 231, 0), rgba(26, 26, 26, 0.7)),
-    conic-gradient(#212121 25%, transparent 25% 50%, #fafafa 50% 75%, transparent 75%);
-
-  background-size: 100% 100%, var(--bgSize) var(--bgSize);
-} */
-
 .halftone::after {
   content: '';
   position: fixed;
@@ -331,10 +314,10 @@ main {
 }
 
 /* media запрос для моб */
+
 @media (max-width: 375px) {
   section {
     width: 100%;
-    /* Переопределяем ширину на мобильных */
   }
 }
 
@@ -424,15 +407,6 @@ main {
   animation: sparks-fade-in 0.3s ease-in 0.3s 1;
 }
 
-/* supports */
-
-/* поддержка вариативного шрифта */
-/* @supports (font-variation-settings: normal) {
-  .page {
-    font-family: var(--main-font), sans-serif;
-    font-variation-settings: 'wght' var(--font-weight-bold), 'wdth' 100, 'opsz' 0;
-  }
-} почему-то не работает */
 
 @supports (-webkit-text-stroke: 1px var(--text-stroke-color)) {
   .card__label {
