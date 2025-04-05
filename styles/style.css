@@ -327,7 +327,7 @@ main {
 
 /* background */
 
-.halftone::after {
+/* .halftone::after {
   content: '';
   position: fixed;
   inset: 0;
@@ -339,9 +339,18 @@ main {
     conic-gradient(#212121 25%, transparent 25% 50%, #fafafa 50% 75%, transparent 75%);
 
   background-size: 100% 100%, var(--bgSize) var(--bgSize);
-}
+} */
 
 .halftone::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  height: 100%;
+  background-image:
+    linear-gradient(rgba(231, 231, 231, 0), rgba(26, 26, 26, 0.7)),
+    conic-gradient(#212121 25%, transparent 25% 50%, #fafafa 50% 75%, transparent 75%);
+  background-size: 100% 100%, var(--bgSize) var(--bgSize);
   mask-image: linear-gradient(to top, rgb(0 0 0), rgb(0 0 0 / 0));
 }
 
