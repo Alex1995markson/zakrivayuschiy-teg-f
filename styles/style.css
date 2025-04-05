@@ -222,8 +222,6 @@ main {
   fill: var(--bg-color);
 }
 
-/* dialog */
-
 .dialog__save {
   inline-size: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
   flex-direction: column;
@@ -272,7 +270,6 @@ main {
   text-transform: uppercase;
 }
 
-/* media and etc... */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -283,8 +280,6 @@ main {
 
 }
 
-/* class wrapper */
-
 .border {
   border: 2px solid var(--text-color);
   overflow: hidden;
@@ -293,8 +288,6 @@ main {
 .last_letter {
   text-transform: none;
 }
-
-/* background */
 
 .halftone::after {
   content: '';
@@ -309,15 +302,11 @@ main {
   mask-image: linear-gradient(to top, rgb(0 0 0), rgb(0 0 0 / 0));
 }
 
-/* media запрос для моб */
-
 @media (max-width: 375px) {
   section {
     width: 100%;
   }
 }
-
-/* style for images */
 
 .blur-and-sepia {
   filter: blur(0.2rem) sepia(80%);
@@ -354,8 +343,6 @@ main {
 .saturate {
   filter: saturate(160%);
 }
-
-/* animantions svg */
 
 .like-icon:hover .core {
   fill: var(--heart-contour-color);
@@ -402,7 +389,6 @@ main {
 .like-icon.is-liked .sparks {
   animation: sparks-fade-in 0.3s ease-in 0.3s 1;
 }
-
 
 @supports (-webkit-text-stroke: 1px var(--text-stroke-color)) {
   .card__label {
