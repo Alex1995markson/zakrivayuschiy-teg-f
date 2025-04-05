@@ -205,17 +205,17 @@ main {
   transition: fill 0.3s linear 0.03s;
 }
 
-.button-save {
-  display:  block; 
-  margin: 50px auto 100px;
-  padding: 12px 17px;
-}
-
 .button-save__content {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 8px;
+}
+
+.button-save {
+  display:  block; 
+  margin: 50px auto 100px;
+  padding: 12px 17px;
 }
 
 .button-save__content svg {
