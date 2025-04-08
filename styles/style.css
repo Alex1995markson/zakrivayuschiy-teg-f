@@ -41,7 +41,6 @@
 
 main {
   font-family: var(--main-font), sans-serif;
-  font-variation-settings: "wght" var(--main-font-weight);
 }
 
 .content__section_card {
@@ -60,7 +59,7 @@ main {
 }
 
 .card__header {
-  font-weight: var(--font-weight-bold);
+  font-variation-settings: "wght" var(--font-weight-bold);
   font-size: 1.125rem;
   line-height: 1.4rem;
   margin-inline-start: 0.625rem;
