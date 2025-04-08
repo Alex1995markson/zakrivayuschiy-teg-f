@@ -2,6 +2,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-size: var(--font-size);
+  font-variation-settings: "wght" var(--main-font-weight);
 }
 
 .header {
@@ -53,6 +54,9 @@ main {
 .card {
   display: flex;
   flex-direction: column;
+  max-width: 100%;
+  overflow: hidden;
+  word-break: break-word;
 }
 
 .card__header {
@@ -95,12 +99,13 @@ main {
 
 
 .card__content {
-  font-family: var(--main-font);
+  font-family: var(--main-font), monospace;
   font-weight: var(--font-weight-normal);
   font-size: 1.125rem;
   line-height: 21px;
   margin-inline-start: 1.625rem;
   margin-inline-end: 1.625rem;
+
 }
 
 .button {
@@ -110,12 +115,13 @@ main {
   position: relative;
   cursor: pointer;
   background-color: var(--bg-color);
-  /* transition: box-shadow 0.3s ease;  */
+  transition: box-shadow 0.3s ease; 
 }
 
 .card__content-text {
   margin-block-start: 1.5625rem;
   margin-block-end: 1.6875rem;
+  overflow-wrap: anywhere;
 }
 
 .card__paragraph:first-child {
@@ -145,10 +151,9 @@ main {
   color: var(--bg-color);
 }
 
-/* .button:focus
-{
+.button:focus {
   outline: none;
-} */
+}
 
 .button:focus-visible {
   box-shadow: 2px 2px var(--text-color);
