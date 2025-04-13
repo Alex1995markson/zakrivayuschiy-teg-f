@@ -223,6 +223,12 @@ main {
   gap: 8px;
 }
 
+.button-save__content svg {
+  inline-size: 28px;
+  block-size: 28px;
+  fill: #fff;
+}
+
 .button-save {
   display: block;
   inline-size: clamp(19.125rem, 18.4868rem + 2.723vw, 20.9375rem);
@@ -291,7 +297,25 @@ main {
   .like-icon.is-liked .heart {
     animation: none;
   }
+}
 
+@media (min-width: 1440px) {
+  .card__title {
+    padding: 5px 10px 4px;
+  }
+
+  .card__label {
+    top: 25px;
+    right: 25px;
+  }
+  .button-save__content {
+    flex-direction: row;
+  }
+
+  .button-save__content svg {
+    inline-size: 21px;
+    block-size: 21px;
+  }
 }
 
 .border {
