@@ -230,11 +230,9 @@ main {
 }
 
 .button-save {
-  display: block;
-  inline-size: clamp(19.125rem, 18.4868rem + 2.723vw, 20.9375rem);
+  display: flex;
   padding: 15px 17px;
-  margin-block: 50px 100px;
-  margin-inline: auto;
+  margin: 50px auto 100px; 
 }
 
 .dialog__save {
@@ -287,7 +285,6 @@ main {
 
 
 @media (prefers-reduced-motion: reduce) {
-
   .like-icon.is-liked .sparks,
   .like-icon.is-liked .heart {
     animation: none;
@@ -295,10 +292,6 @@ main {
 }
 
 @media (min-width: 1440px) {
-  .card__title {
-    padding: 5px 10px 4px;
-  }
-
   .card__label {
     top: 25px;
     right: 25px;
