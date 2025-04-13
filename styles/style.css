@@ -232,7 +232,7 @@ main {
 .button-save {
   display: flex;
   padding: 15px 17px;
-  margin: 50px auto 100px; 
+  margin: 50px auto 100px;
 }
 
 .dialog__save {
