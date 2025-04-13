@@ -226,7 +226,7 @@ main {
 .button-save__content svg {
   inline-size: 28px;
   block-size: 28px;
-  fill: #fff;
+  fill: var(--bg-color);
 }
 
 .button-save {
@@ -235,11 +235,6 @@ main {
   padding: 15px 17px;
   margin-block: 50px 100px;
   margin-inline: auto;
-}
-
-.button-save__content svg {
-  block-size: 28px;
-  fill: var(--bg-color);
 }
 
 .dialog__save {
