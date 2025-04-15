@@ -309,17 +309,19 @@ main {
   text-transform: none;
 }
 
-.halftone::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  height: 100%;
-  background-image:
-    linear-gradient(rgba(231, 231, 231, 0), rgba(26, 26, 26, 0.7)),
-    conic-gradient(#212121 25%, transparent 25% 50%, #fafafa 50% 75%, transparent 75%);
-  background-size: 100% 100%, var(--bgSize) var(--bgSize);
-  mask-image: linear-gradient(to top, rgb(0 0 0), rgb(0 0 0 / 0));
+.halftone {
+  background-image: repeating-linear-gradient(
+      to right,
+      #d3d3d3 0 2px,
+      rgb(211 211 211 / 0) 2px 4px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      #d3d3d3 0 2px,
+      rgb(211 211 211 / 0) 2px 4px
+    ),
+    repeating-linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
+  background-attachment: fixed;
 }
 
 .blur-and-sepia {
