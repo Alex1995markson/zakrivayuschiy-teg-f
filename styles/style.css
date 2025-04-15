@@ -23,7 +23,7 @@
 .header__main-title {
   text-align: center;
   font-weight: var(--font-weight-normal);
-  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  font-size: var(--header-title-font-size);
   color: var(--text-color);
 }
 
@@ -61,7 +61,7 @@ main {
   position: relative;
   border-block: 2px var(--text-color) solid;
   inline-size: 100%;
-  block-size: clamp(20rem, 13.2143rem + 33.9286vw, 43.8rem);;
+  block-size: clamp(20rem, 13.2143rem + 33.9286vw, 43.75rem);
 }
 
 .card__image {
@@ -291,6 +291,15 @@ main {
   }
 }
 
+@media (max-width: 425px) {
+  .page__container {
+    inline-size: 100vw;
+  }
+  .card__image-wrap {
+    block-size: 100vw;
+  }
+}
+
 .border {
   border: 2px solid var(--text-color);
   overflow: hidden;
@@ -311,12 +320,6 @@ main {
     conic-gradient(#212121 25%, transparent 25% 50%, #fafafa 50% 75%, transparent 75%);
   background-size: 100% 100%, var(--bgSize) var(--bgSize);
   mask-image: linear-gradient(to top, rgb(0 0 0), rgb(0 0 0 / 0));
-}
-
-@media (max-width: 375px) {
-  section {
-    width: 100%;
-  }
 }
 
 .blur-and-sepia {

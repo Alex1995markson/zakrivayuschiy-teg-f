@@ -37,20 +37,16 @@
     --bgSize: 0.3rem;
     --bgPosition: calc(var(--bgSize) / 2);
 
-    /* Ширина разных элементов на странице */
-    /* header width */
-    --section-min-width: 100vw;
-    /* Минимальная ширина */
-    --section-max-width: 100vw;
-    /* Максимальная ширина */
-    --section-preferred-width: 100vw;
-    /* Предпочтительная ширина */
-
-    /* (LOGO) header__main_text */
-    --logo-min-width: 697px;
-    /* Минимальная ширина логотипа */
-    --logo-max-width: 702px;
-    /* Максимальная ширина логотипа */
-    --logo-preferred-width: 100vw;
-    /* Предпочтительная ширина */
+    /* header font-size */
+    --header-title-font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
 }
+
+@media (width < 375px) {
+    :root {
+      --header-title-font-size: clamp(
+        1.875rem,
+        -5.0341rem + 34.5455vw,
+        3.0625rem
+      );
+    }
+  }
