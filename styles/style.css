@@ -300,11 +300,6 @@ main {
   }
 }
 
-.border {
-  border: 2px solid var(--text-color);
-  overflow: hidden;
-}
-
 .last_letter {
   text-transform: none;
 }
