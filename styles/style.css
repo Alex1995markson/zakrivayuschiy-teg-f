@@ -215,9 +215,11 @@ main {
 }
 
 .button-save {
-  display: flex;
+  display: block;
+  inline-size: clamp(19.125rem, 18.4868rem + 2.723vw, 20.9375rem);
   padding: 15px 17px;
-  margin: 50px auto 100px;
+  margin-block: 50px 100px;
+  margin-inline: auto;
 }
 
 .dialog__save {
@@ -297,6 +299,26 @@ main {
   }
   .card__image-wrap {
     block-size: 100vw;
+  }
+}
+
+@media (width < 375px) {
+  .header__title {
+    font-size: clamp(1.875rem, -5.0341rem + 34.5455vw, 3.0625rem);
+  }
+  .button-save {
+    inline-size: min-content;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 1023px) {
+  .card__label {
+    top: 19px;
+    right: 17px;
+    font-size: 0.375rem;
+  }
+  .button-save__content {
+    flex-direction: column;
   }
 }
 
